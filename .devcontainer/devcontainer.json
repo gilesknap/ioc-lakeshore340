@@ -14,6 +14,11 @@
         // provides a name for epics-containers to use in bash prompt etc.
         "EC_PROJECT": "${localWorkspaceFolderBasename}"
     },
+    // IMPORTANT for this devcontainer to work with docker EC_REMOTE_USER must be
+    // set to vscode. You will run as vscode with full sudo rights.
+    // For podman it should be left blank. You will run as root but host mounts
+    // will be owned by your user.
+    "remoteUser": "${localEnv:EC_REMOTE_USER}",
     "features": {
         // add quality of life features for developers including git config integration
         "ghcr.io/devcontainers/features/common-utils:2": {
